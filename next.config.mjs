@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        remotePatterns: [
+          {
+            protocol: "https",
+            hostname: "panel.gdynskaekipa.pl",
+            port: "",
+            pathname: "/wp-content/uploads/**",
+          },
+        ],
+      },
+};
 
 export default nextConfig;
