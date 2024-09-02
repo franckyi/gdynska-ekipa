@@ -1,10 +1,12 @@
 import Image from "next/image"
 
-export default async function WorkGalleryItem({media}) {
-    const data = await fetch(media)
-    const item = await data.json()
-    
+export default async function WorkGalleryItem({ mediaId }) {
+    const media = await fetch(`https://panel.gdynskaekipa.pl/wp-json/wp/v2/media/${mediaId}`)
+    const mediaItem = await media.json()
+    const url = mediaItem.media_details.sizes.large.source_url;
+    const alt = mediaItem.title.rendered;
+
     return (
-        <Image src={item.media_details.sizes.thumbnail.source_url} width={150} height={150} alt={item.title.rendered} />
+        <Image className="work-gallery-thumbnail" src={url} width={480} height={480} alt={alt} />
     )
 }
