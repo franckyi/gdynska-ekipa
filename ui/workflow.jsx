@@ -1,6 +1,6 @@
 import parse from 'html-react-parser'
 
-export default async function Workflow({workflowSection}) {
+export default async function Workflow({section}) {
     const data = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/proces')
     let items = await data.json()
 
@@ -8,7 +8,7 @@ export default async function Workflow({workflowSection}) {
 
     return (
         <div>
-            {parse(workflowSection.content.rendered)}
+            {parse(section.content.rendered)}
             <div className="workflow-steps flex">
                 {items.map(item => {
                     return (

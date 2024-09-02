@@ -1,5 +1,5 @@
-import AppBar from "@/ui/app-bar";
-import Slides from "@/ui/slides";
+import AppBar from "@/ui/app-bar/app-bar";
+import Slides from "@/ui/slides/slides";
 import WorksGallery from "@/ui/works-gallery";
 import Workflow from "@/ui/workflow";
 import AboutUs from "@/ui/about-us";
@@ -16,19 +16,20 @@ export default async function Home() {
   const aboutUsSection = sections.filter(item => item.slug == "o-nas")[0]
   const companyValues = sections.filter(item => item.slug == "o-firmy")[0]
   const logos = sections.filter(item => item.slug == "loga-partnerow")[0]
+  
   let infoData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/company_office')
   let info = await infoData.json()
   info = info.filter(item => item.slug == "gdynia")[0]
 
   return (
     <>
-      <header className="">
+      <header className="p-8">
         <AppBar />
         <Slides />
       </header>
-      <main className="">
+      <main>
         <WorksGallery />
-        <Workflow workflowSection={workflowSection} />
+        <Workflow section={workflowSection} />
         <AboutUs btnText={aboutUsSection.meta.button_text} content={aboutUsSection.content.rendered} />
         <Team />
         <CompanyValues section={companyValues} />

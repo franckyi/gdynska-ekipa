@@ -1,0 +1,16 @@
+.slide-images > div {
+    background: red;
+    position: relative;
+    z-index: 5;
+    min-height: 100%;
+}
+
+.slide-images figure {
+    background: yellow;
+    z-index: 10;
+    min-width: 480px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
