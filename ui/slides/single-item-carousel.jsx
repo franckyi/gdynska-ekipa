@@ -34,7 +34,7 @@ function Item(props)
             <div className="slide-text">
                 <h2 className="slide-heading">{heading}</h2>
                 <p className={descClasses}>{description}</p>
-                <button className="slide-button px-20 py-4 border-stone-800 hover:bg-amber-600 border hover:border-amber-600" type="button">
+                <button className="slide-button px-20 py-4 border-amber-600 hover:bg-amber-600 border hover:border-white" type="button">
                     {btnText}
                 </button>
             </div>
