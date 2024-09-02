@@ -2,10 +2,10 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 import { fontSecondary } from '@/ui/fonts'
-import './single-item-carousel.css'
+import './slide.css'
 import Image from 'next/image'
 
-export default function SingleItemCarousel({items})
+export default function Slide({items})
 {
     return (
         <Carousel>
@@ -24,6 +24,7 @@ function Item(props)
     const photo = props.item.meta.photo;
     const descClasses = `slide-description text-lg italic ${fontSecondary.className}`;
     const btnText = props.item.meta.button_text;
+    const btnClasses = "slide-button px-20 py-4 border-amber-600 hover:bg-amber-600 border hover:border-white"
     
     return (
         <div  className="slide-container" key={props.item.id}>
@@ -34,7 +35,7 @@ function Item(props)
             <div className="slide-text">
                 <h2 className="slide-heading">{heading}</h2>
                 <p className={descClasses}>{description}</p>
-                <button className="slide-button px-20 py-4 border-amber-600 hover:bg-amber-600 border hover:border-white" type="button">
+                <button className={btnClasses} type="button">
                     {btnText}
                 </button>
             </div>

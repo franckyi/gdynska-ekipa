@@ -1,4 +1,4 @@
-import AppBar from "@/ui/app-bar/app-bar";
+import AppBar from "@/ui/app-bar";
 import Slides from "@/ui/slides/slides";
 import WorksGallery from "@/ui/works-gallery";
 import Workflow from "@/ui/workflow";
@@ -30,7 +30,7 @@ export default async function Home() {
       <main>
         <WorksGallery />
         <Workflow section={workflowSection} />
-        <AboutUs btnText={aboutUsSection.meta.button_text} content={aboutUsSection.content.rendered} />
+        <AboutUs btnText={aboutUsSection.meta.button_text} content={aboutUsSection} />
         <Team />
         <CompanyValues section={companyValues} />
         <Stats />

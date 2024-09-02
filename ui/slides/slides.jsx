@@ -1,4 +1,4 @@
-import SingleItemCarousel from '@/ui/slides/single-item-carousel'
+import Slide from '@/ui/slides/slide'
 
 export default async function Slides() {
     const data = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/slajdy')
@@ -7,6 +7,6 @@ export default async function Slides() {
     items = items.sort((a, b) => a.meta.display_order - b.meta.display_order)
 
     return (
-        <SingleItemCarousel items={items} />
+        <Slide items={items} />
     )
   }

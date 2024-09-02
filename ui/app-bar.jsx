@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link';
-import './app-bar.css';
 
 const appBarClasses =
   "flex flex-row justify-between";
