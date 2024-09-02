@@ -23,7 +23,7 @@ export default async function Home() {
 
   return (
     <>
-      <header className="p-8">
+      <header className="p-8 h-screen">
         <AppBar />
         <Slides />
       </header>

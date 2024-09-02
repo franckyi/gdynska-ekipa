@@ -1,16 +1,56 @@
-.slide-images > div {
-    background: red;
+.slide-container {
     position: relative;
-    z-index: 5;
-    min-height: 100%;
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.slide-images figure {
-    background: yellow;
-    z-index: 10;
-    min-width: 480px;
-    height: auto;
+.slide-images {
+    display: flex;
+    width: 50%;
     position: absolute;
-    top: 0;
+    top: 25%;
     left: 0;
+}
+
+.slide-drawing {
+    position: absolute;
+    z-index: 20;
+    top: -5rem;
+    left: 5rem;
+}
+
+.slide-photo {
+    position: absolute;
+    z-index: 10;
+    left: 25vw;
+}
+
+.slide-text {
+    position: relative;
+    z-index: 50;
+    text-align: right;
+}
+
+.slide-heading {
+    width: 50%;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    line-height: .8;
+    font-size: 6rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.slide-description {
+    width: 50%;
+    margin-left: auto;
+}
+
+.slide-button {
+    margin-top: 1rem;
+    /* width: 250px; */
 }
