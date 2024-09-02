@@ -7,12 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // backgroundImage: {
-      // "hero-1": "url('/hero1.webp')",
-      //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      //   "gradient-conic":
-      //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      // },
+      backgroundImage: {
+      "company-values": "url('/bg-company-values-90.webp')",
+      },
     },
   },
   plugins: [],

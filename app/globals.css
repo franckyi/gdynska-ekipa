@@ -46,3 +46,45 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
+.team-member img {
+  order: 1;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: rotate(1deg);
+}
+
+.team-member:hover .team-member-contacts {  
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.team-member-contacts {
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.company-values h3 {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.company-values .value-list {
+  letter-spacing: 5px;
+}
+
+.company-values .client-list {
+  list-style-type: square;
+  color: #d97706;
+}

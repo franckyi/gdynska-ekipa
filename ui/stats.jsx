@@ -5,6 +5,6 @@ export default async function Stats() {
     items = items.filter(item => item.slug == "glowne")
 
     return(
-        <p>show a map with cities</p>
+        <p>show stats</p>
     )
 }

@@ -14,6 +14,7 @@ export default async function Home() {
   const sections = await sectionsData.json()
   const workflowSection = sections.filter(item => item.slug == "proces-wykonczenia")[0]
   const aboutUsSection = sections.filter(item => item.slug == "o-nas")[0]
+  const teamSection = sections.filter(item => item.slug == "ekipa")[0]
   const companyValues = sections.filter(item => item.slug == "o-firmy")[0]
   const logos = sections.filter(item => item.slug == "loga-partnerow")[0]
   
@@ -31,7 +32,7 @@ export default async function Home() {
         <WorksGallery />
         <Workflow section={workflowSection} />
         <AboutUs btnText={aboutUsSection.meta.button_text} content={aboutUsSection} />
-        <Team />
+        <Team content={teamSection} />
         <CompanyValues section={companyValues} />
         <Stats />
         <Logos logos={logos} />
