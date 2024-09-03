@@ -2,7 +2,7 @@ import { fontSecondary } from "./fonts"
 
 export default async function Footer({info}) {
     return (
-        <footer className="p-8 pt-24">
+        <footer className="pb-8 pt-12 w-4/6 mx-auto">
             <h3 className="text-3xl w-[240px] pb-4 mb-4 border-b border-amber-600">{info.meta.company_name}</h3>
             <p className={fontSecondary.className}>{info.meta.slogan}</p>
             <div className="my-4">{info.meta.address}</div>

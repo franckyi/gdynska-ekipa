@@ -1,6 +1,7 @@
 import AppBar from "@/ui/app-bar";
 import parse from 'html-react-parser'
 import { fontSecondary } from "@/ui/fonts";
+import Image from 'next/image'
 import WhyUs from "@/ui/why-us";
 import Footer from "@/ui/footer";
 
@@ -16,6 +17,8 @@ export default async function AboutUs() {
     const sectionsData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/inne_sekcje')
     const sections = await sectionsData.json()
     const aboutUs = sections.filter(item => item.slug == "o-nas")[0]
+    const contactUs = sections.filter(item => item.slug == "kontakt")[0]
+
 
     const whyUsData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/dlaczego_my')
     let whyUsList = await whyUsData.json()
@@ -38,6 +41,7 @@ export default async function AboutUs() {
                     </div>
                     <h2 className={headingClasses}>Nasza misja</h2>
                     <p>{info.meta.company_mission}</p>
+                    <Image className="mx-auto" src="/ill1.webp" width="500" height="433" alt="" />
                     <h2 id="uslugi" className={headingClasses}>Nasze usługi</h2>
                     <div className="flex bg-mall bg-fixed bg-no-repeat">
                         {services.map(item => {
@@ -51,6 +55,11 @@ export default async function AboutUs() {
                     </div>
                 </div>
                 <WhyUs whyUsList={whyUsList} section={aboutUs} />
+                <div className="w-4/6 mx-auto">
+                <h2 className={headingClasses}>{contactUs.meta.heading}</h2>                    
+                    {parse(contactUs.content.rendered)}
+                    <p className={`my-12 text-amber-600 text-xl ${fontSecondary.className}`}>{contactUs.meta.subheading}</p>
+                </div>
             </main>
             <Footer info={info} />
         </>
