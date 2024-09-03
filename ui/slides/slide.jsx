@@ -24,7 +24,7 @@ function Item(props)
     const photo = props.item.meta.photo;
     const descClasses = `slide-description text-lg italic ${fontSecondary.className}`;
     const btnText = props.item.meta.button_text;
-    const btnClasses = "slide-button px-20 py-4 border-amber-600 hover:bg-amber-600 border hover:border-white"
+    const btnClasses = "slide-button inline-block px-20 py-4 border-amber-600 hover:bg-amber-600 border hover:border-white"
     
     return (
         <div  className="slide-container" key={props.item.id}>
@@ -35,9 +35,9 @@ function Item(props)
             <div className="slide-text">
                 <h2 className="slide-heading">{heading}</h2>
                 <p className={descClasses}>{description}</p>
-                <button className={btnClasses} type="button">
+                <a className={btnClasses} href="/o-nas#uslugi">
                     {btnText}
-                </button>
+                </a>
             </div>
         </div>
         

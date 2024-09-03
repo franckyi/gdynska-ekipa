@@ -18,6 +18,7 @@ export default async function AboutUs() {
     const sections = await sectionsData.json()
     const aboutUs = sections.filter(item => item.slug == "o-nas")[0]
     const contactUs = sections.filter(item => item.slug == "kontakt")[0]
+    const ourTarget = sections.filter(item => item.slug == "dla-kogo-jestemy")[0]
 
 
     const whyUsData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/dlaczego_my')
@@ -43,7 +44,7 @@ export default async function AboutUs() {
                     <p>{info.meta.company_mission}</p>
                     <Image className="mx-auto" src="/ill1.webp" width="500" height="433" alt="" />
                     <h2 id="uslugi" className={headingClasses}>Nasze usługi</h2>
-                    <div className="flex bg-mall bg-fixed bg-no-repeat">
+                    <div className="flex bg-mall rounded-tr-full bg-fixed bg-no-repeat">
                         {services.map(item => {
                             return (
                                 <div className="my-12" key={item.id}>
@@ -56,9 +57,13 @@ export default async function AboutUs() {
                 </div>
                 <WhyUs whyUsList={whyUsList} section={aboutUs} />
                 <div className="w-4/6 mx-auto">
-                <h2 className={headingClasses}>{contactUs.meta.heading}</h2>                    
+                    <h2 className={headingClasses}>{contactUs.meta.heading}</h2>                    
                     {parse(contactUs.content.rendered)}
                     <p className={`my-12 text-amber-600 text-xl ${fontSecondary.className}`}>{contactUs.meta.subheading}</p>
+                </div>
+                <div className="w-4/6 mx-auto">
+                    <h2 className={headingClasses}>{ourTarget.title.rendered}</h2>                    
+                    {parse(ourTarget.content.rendered)}
                 </div>
             </main>
             <Footer info={info} />
