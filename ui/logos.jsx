@@ -4,7 +4,7 @@ export default function Logos({logos}) {
     logos = parse(logos.content.rendered)
 
     return (
-        <div>
+        <div className="my-32 w-4/6 mx-auto">
             {logos}
         </div>
     )

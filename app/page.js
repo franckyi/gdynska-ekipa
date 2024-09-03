@@ -7,6 +7,7 @@ import Team from "@/ui/team";
 import CompanyValues from "@/ui/company-values";
 import Stats from "@/ui/stats";
 import Logos from "@/ui/logos";
+import BrandsCarousel from "@/ui/brands-carousel/brands-carousel";
 import Footer from "@/ui/footer";
 
 export default async function Home() {
@@ -35,7 +36,7 @@ export default async function Home() {
         <Team content={teamSection} />
         <CompanyValues section={companyValues} />
         <Stats />
-        <Logos logos={logos} />
+        <BrandsCarousel />
       </main>
       <Footer info={info} />
     </>
