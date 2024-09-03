@@ -13,7 +13,7 @@ export default async function WhyUs({whyUsList, section}) {
                 <div className="flex flex-wrap">
                     {whyUsList.map(item => {
                         return (
-                            <div key={item.id} className="why-us-item mb-8">
+                            <div key={item.id} className="why-us-item mb-8 max-w-[480px]">
                                 <h3 className="text-3xl text-amber-600">{item.title.rendered}</h3>
                                 <div>{parse(item.content.rendered)}</div>
                             </div>

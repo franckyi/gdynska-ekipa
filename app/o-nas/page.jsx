@@ -37,11 +37,11 @@ export default async function AboutUs() {
                 <h1 className={titleClasses}>O nas</h1>
                 <div className="w-4/6 mx-auto">
                     <div className="flex flex-wrap gap-16 my-12">
-                        <p className={`text-amber-600 text-xl ${fontSecondary.className}`}>{info.meta.company_short_desc}</p>
-                        <p>{info.meta.company_full_desc}</p>
+                        <p className={`max-w-[480px] mx-auto text-amber-600 text-xl ${fontSecondary.className}`}>{info.meta.company_short_desc}</p>
+                        <p className="max-w-[480px] mx-auto">{info.meta.company_full_desc}</p>
                     </div>
                     <h2 className={headingClasses}>Nasza misja</h2>
-                    <p>{info.meta.company_mission}</p>
+                    <p className="max-w-[480px] mx-auto text-center">{info.meta.company_mission}</p>
                     <Image className="mx-auto" src="/ill1.webp" width="500" height="433" alt="" />
                     <h2 id="uslugi" className={headingClasses}>Nasze usługi</h2>
                     <div className="flex flex-wrap bg-mall rounded-tr-full bg-fixed bg-no-repeat">
@@ -58,12 +58,14 @@ export default async function AboutUs() {
                 <WhyUs whyUsList={whyUsList} section={aboutUs} />
                 <div className="w-4/6 mx-auto">
                     <h2 className={headingClasses}>{contactUs.meta.heading}</h2>                    
-                    {parse(contactUs.content.rendered)}
-                    <p className={`my-12 text-amber-600 text-xl ${fontSecondary.className}`}>{contactUs.meta.subheading}</p>
+                    <div className="max-w-[480px] mx-auto text-center">{parse(contactUs.content.rendered)}</div>
+                    <p className={`my-12 mx-auto text-center text-amber-600 text-xl ${fontSecondary.className}`}>{contactUs.meta.subheading}</p>
                 </div>
-                <div className="w-4/6 mx-auto">
+                <div className="w-4/6 mx-auto my-12">
                     <h2 className={headingClasses}>{ourTarget.title.rendered}</h2>                    
-                    {parse(ourTarget.content.rendered)}
+                    <div className="max-w-[480px] mx-auto text-center">
+                        {parse(ourTarget.content.rendered)}
+                    </div>
                 </div>
             </main>
             <Footer info={info} />
