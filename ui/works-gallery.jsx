@@ -10,7 +10,7 @@ export default async function WorksGallery() {
     const textContainerClasses = "work-gallery-overlay absolute bg-stone-950/95 w-full h-full flex flex-col justify-center items-center"
 
     return (
-        <div className="flex flex-wrap">
+        <div id="realizacje" className="flex flex-wrap">
             {items.map(item => {
                 return (
                     <Link className="work-gallery-link relative" key={item.id} href={`/realizacje/${item.id}`} title={item.title.rendered}>

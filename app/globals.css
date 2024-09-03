@@ -17,6 +17,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background);
@@ -99,4 +103,18 @@ body {
 .gallery figure {
   width: 600px;
   height: "auto";
+}
+
+.service ul,
+.why-us .client-list ul {
+  list-style-type: square;
+}
+
+.service li::marker,
+.why-us .client-list li::marker {
+  color: #d97706;
+}
+
+.why-us .client-list p {
+  font-weight: bold;
 }

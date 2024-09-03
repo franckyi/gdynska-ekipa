@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-      "company-values": "url('/bg-company-values-90.webp')",
+      "bedroom": "url('/bg-bedroom.webp')",
+      "livingroom": "url('/bg-livingroom.webp')",
+      "mall": "url('/bg-mall.webp')",
       },
     },
   },

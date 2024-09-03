@@ -28,10 +28,10 @@ export default async function Home() {
         <Slides />
       </header>
       <main>
-        <WorksGallery id="realizacje" />
+        <WorksGallery />
         <Workflow section={workflowSection} />
         <AboutUs btnText={aboutUsSection.meta.button_text} content={aboutUsSection} />
-        <Team id="zespol" content={teamSection} />
+        <Team content={teamSection} />
         <CompanyValues section={companyValues} />
         <Stats />
         <BrandsCarousel />

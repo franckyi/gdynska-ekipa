@@ -11,7 +11,7 @@ export default async function Team({content}) {
     const headingClasses = 'mx-auto mb-20 text-6xl w-3/4 text-center uppercase'
 
     return (
-        <div className="my-32 w-4/6 mx-auto">
+        <div id="zespol" className="my-32 w-4/6 mx-auto">
             <p className={subheadingClasses}>{content.meta.subheading}</p>
             <h2 className={headingClasses}>{content.meta.heading}</h2>
             <div className="team-members flex justify-between">
