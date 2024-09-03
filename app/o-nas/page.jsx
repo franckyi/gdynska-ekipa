@@ -25,8 +25,8 @@ export default async function AboutUs() {
     let whyUsList = await whyUsData.json()
     whyUsList = whyUsList.sort((a, b) => a.meta.display_order - b.meta.display_order)
 
-    const titleClasses = 'mx-auto mb-20 text-8xl px-8 py-12 w-full bg-stone-900 text-center uppercase'
-    const headingClasses = 'mx-auto my-12 text-6xl w-3/4 text-center uppercase'
+    const titleClasses = 'mx-auto mb-20 text-5xl xl:text-8xl px-8 py-12 w-full bg-stone-900 text-center uppercase'
+    const headingClasses = 'lg:mx-auto md:my-12 text-4xl lg:text-6xl lg:w-3/4 xl:text-center uppercase'
 
     return (
         <>
@@ -36,7 +36,7 @@ export default async function AboutUs() {
             <main>
                 <h1 className={titleClasses}>O nas</h1>
                 <div className="w-4/6 mx-auto">
-                    <div className="flex gap-16 my-12">
+                    <div className="flex flex-wrap gap-16 my-12">
                         <p className={`text-amber-600 text-xl ${fontSecondary.className}`}>{info.meta.company_short_desc}</p>
                         <p>{info.meta.company_full_desc}</p>
                     </div>
@@ -44,12 +44,12 @@ export default async function AboutUs() {
                     <p>{info.meta.company_mission}</p>
                     <Image className="mx-auto" src="/ill1.webp" width="500" height="433" alt="" />
                     <h2 id="uslugi" className={headingClasses}>Nasze usługi</h2>
-                    <div className="flex bg-mall rounded-tr-full bg-fixed bg-no-repeat">
+                    <div className="flex flex-wrap bg-mall rounded-tr-full bg-fixed bg-no-repeat">
                         {services.map(item => {
                             return (
                                 <div className="my-12" key={item.id}>
                                     <h3 className="text-3xl text-amber-600">{item.title.rendered}</h3>
-                                    <div className="service my-4 w-3/6">{parse(item.content.rendered)}</div>
+                                    <div className="service my-4 xl:w-3/6">{parse(item.content.rendered)}</div>
                                 </div>
                             )
                         })}

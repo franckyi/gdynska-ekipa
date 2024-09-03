@@ -37,6 +37,13 @@ body {
   height: 480px;
 }
 
+@media screen and (max-width: 768px) {
+  .work-gallery-link {
+    width: 50%;
+    height: 280px;
+  }
+}
+
 .work-gallery-link:hover .work-gallery-overlay {
   opacity: 1;
 }
@@ -54,8 +61,10 @@ body {
 .team-member img {
   order: 1;
   border-radius: 50%;
-  width: 400px;
-  height: 400px;
+  min-width: 300px;
+  width: 300px;
+  height: 300px;
+  min-height: 300px;
   object-fit: cover;
   margin-bottom: 2rem;
   transition: all 0.3s ease;

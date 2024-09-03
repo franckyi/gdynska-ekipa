@@ -1,13 +1,18 @@
 import AppBar from "@/ui/app-bar"
 import { fontSecondary } from "@/ui/fonts"
 import parse from 'html-react-parser'
+import Footer from "@/ui/footer"
 
 export default async function Page({ params }) {
   const data = await fetch(`https://panel.gdynskaekipa.pl/wp-json/wp/v2/realizacje/${params.id}`)
   const work = await data.json()
 
+  const infoData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/company_office')
+  let info = await infoData.json()
+  info = info.filter(item => item.slug == "gdynia")[0]
+
   const content = parse(work.content.rendered)
-  const headingClasses = 'mx-auto mb-20 text-8xl px-8 py-12 w-full bg-stone-900 text-center uppercase'
+  const headingClasses = 'mx-auto mb-20 text-3xl xl:text-8xl px-8 py-12 w-full bg-stone-900 text-center uppercase'
   const valueClasses = "text-xl text-amber-600"
 
   return (
@@ -24,6 +29,7 @@ export default async function Page({ params }) {
         </div>
         <div className="w-4/6 my-12 mx-auto">{content}</div>
       </main>
+      <Footer info={info} />
     </>
 
   )

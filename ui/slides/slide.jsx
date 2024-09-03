@@ -8,7 +8,26 @@ import Image from 'next/image'
 export default function Slide({items})
 {
     return (
-        <Carousel>
+        <Carousel
+            navButtonsAlwaysVisible="true"
+            navButtonsProps={{ // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
+                style: {
+                    backgroundColor: '#d97706',
+                    borderRadius: '50%',
+                }
+            }}
+            indicatorIconButtonProps={{
+                style: {
+                    padding: '6px',    // 1
+                    color: 'white'       // 3
+                }
+            }}
+            activeIndicatorIconButtonProps={{
+                style: {
+                    backgroundColor: '#d97706' // 2
+                }
+            }}
+        >
             {
                 items.map( (item) => <Item key={item.id} item={item} /> )
             }
@@ -29,12 +48,12 @@ function Item(props)
     return (
         <div  className="slide-container" key={props.item.id}>
             <div className="slide-images">
-                <Image className="slide-drawing" width="640" height="640" src={drawing} alt="" />
-                <Image className="slide-photo" width="480" height="480" src={photo} alt={heading} />
+                <Image className="slide-drawing transition-all duration-[4000ms]" width="640" height="640" src={drawing} alt="" />
+                <Image className="slide-photo opacity-10 2xl:opacity-40" width="480" height="480" src={photo} alt={heading} />
             </div>
-            <div className="slide-text">
-                <h2 className="slide-heading">{heading}</h2>
-                <p className={descClasses}>{description}</p>
+            <div className="slide-text lg:translate-x-[20%] p-4 md:p-0 top-[140px] 2xl:top-0">
+                <h2 className="slide-heading text-4xl lg:text-8xl ml-0 lg:ml-auto">{heading}</h2>
+                <p className={`ml-0 md:ml-auto ${descClasses}`}>{description}</p>
                 <a className={btnClasses} href="/o-nas#uslugi">
                     {btnText}
                 </a>

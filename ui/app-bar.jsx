@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link';
 
-const appBarClasses = "flex flex-row justify-between";
-const navClasses = "flex flex-row gap-4 uppercase";
+const appBarClasses = "p-4 flex flex-row flex-wrap justify-between gap-4";
+const navClasses = "flex flex-row flex-wrap gap-4 uppercase";
 const linkClasses = "tracking-widest hover:bg-amber-600"
 const menuItems = [
   {

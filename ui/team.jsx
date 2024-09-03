@@ -8,13 +8,13 @@ export default async function Team({content}) {
     items = items.sort((a, b) => a.meta.display_order - b.meta.display_order)
 
     const subheadingClasses = `text-center ${fontSecondary.className} text-lg`
-    const headingClasses = 'mx-auto mb-20 text-6xl w-3/4 text-center uppercase'
+    const headingClasses = 'mx-auto mb-20 text-4xl lg:text-6xl lg:w-3/4 text-center uppercase'
 
     return (
         <div id="zespol" className="my-32 w-4/6 mx-auto">
             <p className={subheadingClasses}>{content.meta.subheading}</p>
             <h2 className={headingClasses}>{content.meta.heading}</h2>
-            <div className="team-members flex justify-between">
+            <div className="team-members flex flex-wrap justify-center lg:justify-between">
                 {items.map(item => {
                     return (
                         <div key={item.id} className="team-member flex flex-col items-center">

@@ -8,6 +8,10 @@
     margin: 0 auto;
 }
 
+.slide-container:hover .slide-drawing {
+    transform: scale(1.2);
+}
+
 .slide-images {
     display: flex;
     width: 50%;
@@ -35,18 +39,21 @@
     text-align: right;
 }
 
+@media screen and (min-width: 768px) {
+    .slide-text {
+        width: 50%;
+    }
+}
+
 .slide-heading {
-    width: 50%;
     margin-bottom: 1rem;
     margin-left: auto;
     line-height: .8;
-    font-size: 6rem;
     text-transform: uppercase;
     letter-spacing: 5px;
 }
 
 .slide-description {
-    width: 50%;
     margin-left: auto;
 }
 
