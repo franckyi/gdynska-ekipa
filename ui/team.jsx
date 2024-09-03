@@ -22,8 +22,8 @@ export default async function Team({content}) {
                             <span className='order-2'>{item.meta.role}</span>
                             {parse(item.content.rendered)}
                             <div className='team-member-contacts order-3 text-center'>
-                                <a className='block' href={`mailto:${item.meta.email}`} title='Email'>{item.meta.email}</a>
-                                <a className='block' href={`tel:${item.meta.phone}`} title='Phone'>{item.meta.phone}</a>
+                                <a className='block hover:text-amber-600' href={`mailto:${item.meta.email}`} title='Email'>{item.meta.email}</a>
+                                <a className='block hover:text-amber-600' href={`tel:${item.meta.phone}`} title='Phone'>{item.meta.phone}</a>
                             </div>
                         </div>
                     )

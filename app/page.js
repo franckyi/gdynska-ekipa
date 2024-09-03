@@ -6,7 +6,6 @@ import AboutUs from "@/ui/about-us";
 import Team from "@/ui/team";
 import CompanyValues from "@/ui/company-values";
 import Stats from "@/ui/stats";
-import Logos from "@/ui/logos";
 import BrandsCarousel from "@/ui/brands-carousel/brands-carousel";
 import Footer from "@/ui/footer";
 
@@ -17,7 +16,6 @@ export default async function Home() {
   const aboutUsSection = sections.filter(item => item.slug == "o-nas")[0]
   const teamSection = sections.filter(item => item.slug == "ekipa")[0]
   const companyValues = sections.filter(item => item.slug == "o-firmy")[0]
-  const logos = sections.filter(item => item.slug == "loga-partnerow")[0]
   
   let infoData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/company_office')
   let info = await infoData.json()
@@ -30,10 +28,10 @@ export default async function Home() {
         <Slides />
       </header>
       <main>
-        <WorksGallery />
+        <WorksGallery id="realizacje" />
         <Workflow section={workflowSection} />
         <AboutUs btnText={aboutUsSection.meta.button_text} content={aboutUsSection} />
-        <Team content={teamSection} />
+        <Team id="zespol" content={teamSection} />
         <CompanyValues section={companyValues} />
         <Stats />
         <BrandsCarousel />

@@ -4,7 +4,9 @@ import { fontSecondary } from "./fonts"
 
 export default async function WorksGallery() {
     const data = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/realizacje')
-    const items = await data.json()
+    let items = await data.json()
+    items = items.sort((a, b) => a.meta.display_order - b.meta.display_order)
+
     const textContainerClasses = "work-gallery-overlay absolute bg-stone-950/95 w-full h-full flex flex-col justify-center items-center"
 
     return (
