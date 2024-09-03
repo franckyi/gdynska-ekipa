@@ -11,6 +11,7 @@ module.exports = {
       "bedroom": "url('/bg-bedroom.webp')",
       "livingroom": "url('/bg-livingroom.webp')",
       "mall": "url('/bg-mall.webp')",
+      "ge": "url('/bg-ge.webp')",
       },
     },
   },
