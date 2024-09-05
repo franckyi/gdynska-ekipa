@@ -20,7 +20,6 @@ export default async function AboutUs() {
     const contactUs = sections.filter(item => item.slug == "kontakt")[0]
     const ourTarget = sections.filter(item => item.slug == "dla-kogo-jestemy")[0]
 
-
     const whyUsData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/dlaczego_my')
     let whyUsList = await whyUsData.json()
     whyUsList = whyUsList.sort((a, b) => a.meta.display_order - b.meta.display_order)
