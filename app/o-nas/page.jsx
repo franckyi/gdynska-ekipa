@@ -1,3 +1,4 @@
+import { getData } from '@/services/wordpress'
 import AppBar from "@/ui/app-bar";
 import parse from 'html-react-parser'
 import { fontSecondary } from "@/ui/fonts";
@@ -6,23 +7,16 @@ import WhyUs from "@/ui/why-us";
 import Footer from "@/ui/footer";
 
 export default async function AboutUs() {
-    const infoData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/company_office')
-    let info = await infoData.json()
-    info = info.filter(item => item.slug == "gdynia")[0]
+    const officeUrl = 'https://panel.gdynskaekipa.pl/wp-json/wp/v2/company_office'
+    const sectionsUrl = 'https://panel.gdynskaekipa.pl/wp-json/wp/v2/inne_sekcje'
+    const whyUsUrl = 'https://panel.gdynskaekipa.pl/wp-json/wp/v2/dlaczego_my'
 
-    const servicesData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/uslugi')
-    let services = await servicesData.json()
-    services = services.sort((a, b) => a.meta.display_order - b.meta.display_order)
-
-    const sectionsData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/inne_sekcje')
-    const sections = await sectionsData.json()
-    const aboutUs = sections.filter(item => item.slug == "o-nas")[0]
-    const contactUs = sections.filter(item => item.slug == "kontakt")[0]
-    const ourTarget = sections.filter(item => item.slug == "dla-kogo-jestemy")[0]
-
-    const whyUsData = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/dlaczego_my')
-    let whyUsList = await whyUsData.json()
-    whyUsList = whyUsList.sort((a, b) => a.meta.display_order - b.meta.display_order)
+    const sections = await getData(sectionsUrl, "", false, true)
+    const aboutUs = sections.find( item => item.slug === "o-nas")
+    const contactUs = sections.find( item => item.slug === "kontakt")
+    const ourTarget = sections.find( item => item.slug === "dla-kogo-jestemy")
+    const whyUs = await getData(whyUsUrl, "", false, true )
+    const office = await getData(officeUrl, 'gdynia', false, true)
 
     const titleClasses = 'mx-auto mb-20 text-5xl xl:text-8xl px-8 py-12 w-full bg-stone-900 text-center uppercase'
     const headingClasses = 'lg:mx-auto md:my-12 text-4xl lg:text-6xl lg:w-3/4 xl:text-center uppercase'
@@ -54,7 +48,7 @@ export default async function AboutUs() {
                         })}
                     </div>
                 </div>
-                <WhyUs whyUsList={whyUsList} section={aboutUs} />
+                <WhyUs whyUsList={whyUs} section={aboutUs} />
                 <div className="w-4/6 mx-auto">
                     <h2 className={headingClasses}>{contactUs.meta.heading}</h2>                    
                     <div className="max-w-[480px] mx-auto text-center">{parse(contactUs.content.rendered)}</div>
@@ -67,7 +61,7 @@ export default async function AboutUs() {
                     </div>
                 </div>
             </main>
-            <Footer info={info} />
+            <Footer info={office} />
         </>
         
     )
