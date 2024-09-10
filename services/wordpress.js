@@ -6,7 +6,7 @@ export const getData = async (url, slug, filtered = true, ordered = false) => {
         data = data.filter(item => item.slug == slug)[0];
     }
 
-    if (ordered) {
+    if (ordered & typeof data === "array") {
         data = data.sort((a, b) => a.meta.display_order - b.meta.display_order)
     }
 
