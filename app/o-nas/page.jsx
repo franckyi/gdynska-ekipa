@@ -19,7 +19,6 @@ export default async function AboutUs() {
     const whyUs = await getData(whyUsUrl, "", false, true )
     const office = await getData(officeUrl, 'gdynia', false, true)
     const services = await getData(servicesUrl, "", false, true)
-    
 
     const titleClasses = 'mx-auto mb-20 text-5xl xl:text-8xl px-8 py-12 w-full bg-stone-900 text-center uppercase'
     const headingClasses = 'lg:mx-auto md:my-12 text-4xl lg:text-6xl lg:w-3/4 xl:text-center uppercase'
@@ -31,7 +30,7 @@ export default async function AboutUs() {
             </header>
             <main>
                 <h1 className={titleClasses}>O nas</h1>
-                <div className="w-4/6 mx-auto">
+                <div className="max-w-screen-2xl mx-auto">
                     <div className="flex flex-wrap gap-16 my-12">
                         <p className={`max-w-[480px] mx-auto text-amber-600 text-xl ${fontSecondary.className}`}>{office.meta.company_short_desc}</p>
                         <p className="max-w-[480px] mx-auto">{office.meta.company_full_desc}</p>
@@ -52,7 +51,7 @@ export default async function AboutUs() {
                     </div>
                 </div>
                 <WhyUs whyUsList={whyUs} section={aboutUs} />
-                <div className="w-4/6 mx-auto">
+                <div className="max-w-screen-2xl mx-auto">
                     <h2 className={headingClasses}>{contactUs.meta.heading}</h2>                    
                     <div className="max-w-[480px] mx-auto text-center">{parse(contactUs.content.rendered)}</div>
                     <p className={`my-12 mx-auto text-center text-amber-600 text-xl ${fontSecondary.className}`}>{contactUs.meta.subheading}</p>

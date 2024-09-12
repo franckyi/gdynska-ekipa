@@ -59,6 +59,10 @@ body {
   transition: opacity 0.3s ease;
 }
 
+.work-content p {
+  max-width: 500px;
+}
+
 .team-member img {
   order: 1;
   border-radius: 50%;

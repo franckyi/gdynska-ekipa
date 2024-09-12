@@ -2,7 +2,7 @@ import parse from 'html-react-parser'
 
 export default async function WhyUs({whyUsList, section}) {
     const content = parse(section.content.rendered)
-    const containerClasses = "w-4/6 mx-auto my-32 rounded-tl-full bg-livingroom bg-fixed bg-no-repeat"
+    const containerClasses = "max-w-screen-2xl mx-auto my-32 rounded-tl-full bg-livingroom bg-fixed bg-no-repeat"
     const headingClasses = 'text-left lg:text-center lg:mx-auto md:my-12 text-4xl lg:text-6xl uppercase'
 
     return (
