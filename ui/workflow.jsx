@@ -31,13 +31,13 @@ export default async function Workflow({section}) {
 
     items = items.sort((a, b) => a.meta.display_order - b.meta.display_order)
 
-    const headingClasses = 'mx-auto xl:mb-24 text-4xl lg:text-6xl lg:w-3/4 text-center uppercase'
+    const headingClasses = 'mx-auto mt-8 xl:mb-24 text-4xl lg:text-6xl lg:w-3/4 text-center uppercase'
     const subheadingClasses = `text-center ${fontSecondary.className} text-lg`
-    const processContainerClasses = "mt-16 workflow-steps text-center lg:text-left flex flex-wrap gap-8 justify-between"
+    const processContainerClasses = "mt-16 workflow-steps text-center lg:text-left flex flex-wrap gap-8 justify-between lg:justify-around"
     const processTitleClasses = "lg:mt-4 lg:mb-8 h-12 text-2xl font-bold text-amber-600"
 
     return (
-        <div className="my-32 w-4/6 mx-auto">
+        <div className="my-32 w-4/6 max-w-screen-2xl mx-auto">
             <div className={subheadingClasses}>{section.meta.subheading}</div>
             <h2 className={headingClasses}>{section.meta.heading}</h2>
             <div className={processContainerClasses}>

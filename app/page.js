@@ -24,7 +24,7 @@ export default async function Home() {
   return (
     <>
       <header className="md:p-8 md:h-screen">
-        <AppBar />
+        <AppBar info={office} />
         <Slides />
       </header>
       <main>

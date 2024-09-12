@@ -46,14 +46,14 @@ function Item(props)
     const btnClasses = "slide-button inline-block px-20 py-4 border-amber-600 hover:bg-amber-600 border hover:border-white"
     
     return (
-        <div  className="slide-container" key={props.item.id}>
+        <div className="slide-container" key={props.item.id}>
             <div className="slide-images">
                 <Image className="slide-drawing transition-all duration-[4000ms]" width="640" height="640" src={drawing} alt="" />
-                <Image className="slide-photo opacity-10 2xl:opacity-40" width="480" height="480" src={photo} alt={heading} />
+                <Image className="slide-photo opacity-10 xl:opacity-30" width="480" height="480" src={photo} alt={heading} />
             </div>
             <div className="slide-text lg:translate-x-[20%] p-4 md:p-0 top-[140px] 2xl:top-0">
                 <h2 className="slide-heading text-4xl lg:text-8xl ml-0 lg:ml-auto">{heading}</h2>
-                <p className={`ml-0 md:ml-auto ${descClasses}`}>{description}</p>
+                <p className={`my-8 xl:my-12 ml-0 md:ml-auto ${descClasses}`}>{description}</p>
                 <a className={btnClasses} href="/o-nas#uslugi">
                     {btnText}
                 </a>

@@ -6,7 +6,7 @@ export default async function Stats() {
     items = items.filter(item => item.slug == "glowne")[0]
 
     return(
-        <div className="w-4/6 mx-auto my-32">
+        <div className="w-4/6 max-w-screen-2xl mx-auto my-32">
             <StatsAnimation stats={items} />
         </div>
     )
