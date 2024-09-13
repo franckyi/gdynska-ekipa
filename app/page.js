@@ -31,7 +31,7 @@ export default async function Home() {
         <WorksGallery />
         <Workflow section={workflow} />
         <AboutUs btnText={aboutUs.meta.button_text} content={aboutUs} />
-        <Team content={team} />
+        <Team team={team} />
         <CompanyValues section={companyValues} />
         <Stats />
         <BrandsCarousel />

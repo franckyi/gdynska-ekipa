@@ -2,7 +2,7 @@ import parse from 'html-react-parser'
 import { fontSecondary } from '@/ui/fonts'
 import CakeIcon from '@mui/icons-material/Cake';
 
-export default async function Team({content}) {
+export default async function Team({team}) {
     const data = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/ekipa')
     let items = await data.json()
 
@@ -16,8 +16,8 @@ export default async function Team({content}) {
 
     return (
         <div id="zespol" className="my-32 w-4/6 max-w-screen-2xl mx-auto">
-            <p className={subheadingClasses}>{content.meta.subheading}</p>
-            <h2 className={headingClasses}>{content.meta.heading}</h2>
+            <p className={subheadingClasses}>{team.meta.subheading}</p>
+            <h2 className={headingClasses}>{team.meta.heading}</h2>
             <div className="team-members flex flex-wrap justify-center lg:justify-around">
                 {items.map(item => {
                     return (
@@ -26,9 +26,9 @@ export default async function Team({content}) {
                             <span className='order-2'>{item.meta.role}</span>
                             {item.slug.includes("anna") &&
                             today === AniaBirthDay &&
-                                <div className='order-3 my-4 flex items-center gap-2 uppercase text-cyan-400 tracking-widest text-2xl'>
+                                <div className={`order-3 my-4 flex items-center gap-2 text-cyan-400 tracking-widest text-2xl ${fontSecondary.className}`}>
                                     <CakeIcon />
-                                    100 LAT 🥳🎉🎁
+                                    100 Lat!! 🥳🎉🎁
                                 </div>
                             }
                             {parse(item.content.rendered)}
