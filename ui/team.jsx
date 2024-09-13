@@ -26,9 +26,9 @@ export default async function Team({team}) {
                             <span className='order-2'>{item.meta.role}</span>
                             {item.slug.includes("anna") &&
                             today === AniaBirthDay &&
-                                <div className={`order-3 my-4 flex items-center gap-2 text-cyan-400 tracking-widest text-2xl ${fontSecondary.className}`}>
+                                <div className="order-3 my-4 flex items-center gap-2 text-cyan-400 tracking-widest text-2xl">
                                     <CakeIcon />
-                                    100 Lat!! 🥳🎉🎁
+                                    <span className={fontSecondary.className}>100 Lat!!</span> 🥳🎉🎁
                                 </div>
                             }
                             {parse(item.content.rendered)}
