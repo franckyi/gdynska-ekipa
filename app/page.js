@@ -1,6 +1,6 @@
 import AppBar from "@/ui/app-bar";
 import Slides from "@/ui/slides/slides";
-import { getData } from '@/services/wordpress'
+import { getData, getPosts } from '@/services/wordpress';
 import WorksGallery from "@/ui/works-gallery";
 import Workflow from "@/ui/workflow";
 import AboutUs from "@/ui/about-us";
@@ -8,11 +8,14 @@ import Team from "@/ui/team";
 import CompanyValues from "@/ui/company-values";
 import Stats from "@/ui/stats";
 import BrandsCarousel from "@/ui/brands-carousel/brands-carousel";
+import LatestPosts from "@/ui/posts/latest-posts";
 import Footer from "@/ui/footer";
 
 export default async function Home() {
   const sectionsUrl = 'https://panel.gdynskaekipa.pl/wp-json/wp/v2/inne_sekcje'
   const officeUrl = 'https://panel.gdynskaekipa.pl/wp-json/wp/v2/company_office'
+  const posts = await getPosts()
+  const latestPosts = posts.slice(0, 3)
 
   const sections = await getData(sectionsUrl, "", false, true)
   const workflow = sections.find( item => item.slug === "proces-wykonczenia")
@@ -35,6 +38,7 @@ export default async function Home() {
         <CompanyValues section={companyValues} />
         <Stats />
         <BrandsCarousel />
+        <LatestPosts posts={latestPosts} />
       </main>
       <Footer info={office} />
     </>

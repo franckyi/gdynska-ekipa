@@ -37,6 +37,12 @@ const menuItems = [
     link: "/o-nas",
     classes: linkClasses
   },
+  {
+    id: 5,
+    name: "Blog",
+    link: "/#blog",
+    classes: linkClasses
+  },
 ]
 
 export default function AppBar({info}) {

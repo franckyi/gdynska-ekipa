@@ -132,3 +132,16 @@ body {
 .why-us .client-list p {
   font-weight: bold;
 }
+
+.post-content p {
+  max-width: 640px;
+}
+
+.post-content h2 {
+  margin: 2rem 0;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.post-content ul {
+  list-style-type: lower-roman;
+}
