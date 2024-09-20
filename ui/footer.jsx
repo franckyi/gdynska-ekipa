@@ -9,7 +9,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 export default async function Footer({info}) {
     return (
         <footer className="bg-black">
-            <div className="pb-8 pt-12 w-4/6 max-w-screen-2xl mx-auto bg-ge bg-scroll bg-no-repeat bg-center bg-cover">
+            <div className="p-4 pb-8 pt-12 lg:w-4/6 max-w-screen-2xl mx-auto bg-ge bg-scroll bg-no-repeat bg-center bg-cover">
                 <h3 className="text-3xl w-[240px] pb-4 mb-4 border-b border-amber-600">{info.meta.company_name}</h3>
                 <p className={fontSecondary.className}>{info.meta.slogan}</p>
                 <div className="mt-4"><BusinessIcon /> Gdyńska Ekipa Dawid Bierkus</div>
