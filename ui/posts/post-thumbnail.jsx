@@ -12,7 +12,7 @@ export default async function PostThumbnail({ mediaId }) {
             width={300}
             height={300}
             alt={alt}
-            className="object-cover"
+            className="object-cover max-h-[300px]"
         />
     )
 }

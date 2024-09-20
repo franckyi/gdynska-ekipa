@@ -1,9 +1,9 @@
-import {getPostCategoryById} from "@/services/wordpress";
+import {getCategoryById} from "@/services/wordpress";
 
-export default async function CategoryChip({ categoryId }) {
-    const category = await getPostCategoryById(categoryId)
+export default async function CategoryChip({ id }) {
+    const category = await getCategoryById(id)
 
     return (
-        <span className="category-chip bg-stone-800">{category.name}</span>
+        <div className="category-chip bg-amber-600 text-white">chip: {JSON.stringify(category)} {category.name}</div>
     );
 }
