@@ -1,4 +1,4 @@
-import { getData, getPostBySlug } from '@/services/wordpress';
+import { getAuthorById, getData, getPostBySlug } from '@/services/wordpress';
 import AppBar from '@/ui/app-bar';
 import CategoryText from '@/ui/category-text'
 import TagChip from '@/ui/tag-chip'
@@ -17,6 +17,8 @@ export default async function Page({ params }) {
         day: 'numeric',
     })
 
+    const author = await getAuthorById(post.author);
+
     return (
         <>
             <header className="md:p-8">
@@ -32,12 +34,13 @@ export default async function Page({ params }) {
                         ))}
                     </div>
 
-                    <p className="mt-4 mr-8">
-                        {publishedDate}
+                    <p className="mt-4 mr-8 text-right">
+                        {publishedDate} <br />
+                        — {author.name}
                     </p>
 
                     <h1 className='mx-auto my-20 text-2xl lg:text-4xl text-right font-bold'>{post.title.rendered}</h1>
-                    
+
                     {post.tags.map((id) => (
                         <TagChip key={id} tagId={id} />
                     ))}
