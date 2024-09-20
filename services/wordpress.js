@@ -42,3 +42,9 @@ export async function getCategoryById(id) {
     const category = await response.json();
     return category;
 }
+
+export async function getTagById(id) {
+    const response = await fetch(`${baseUrl}/tags/${id}`, revalidation);
+    const tag = await response.json();
+    return tag;
+}
