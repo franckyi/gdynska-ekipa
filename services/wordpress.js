@@ -1,4 +1,6 @@
-const duration = 3600 * 24
+const duration = 3600 * 6
+const revalidation = { next: { revalidate: duration } }
+const baseUrl = "https://panel.gdynskaekipa.pl/wp-json/wp/v2"
 
 export const getData = async (url, slug, filtered = true, ordered = false) => {
     const response = await fetch(url, { next: { revalidate: duration } });
@@ -16,27 +18,27 @@ export const getData = async (url, slug, filtered = true, ordered = false) => {
 }
 
 export async function getPosts() {
-    const response = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/posts', { next: { revalidate: duration } });
+    const response = await fetch('/posts', revalidation);
     const posts = await response.json();
     const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
     return sortedPosts;
 }
 
 export async function getPostBySlug(slug) {
-    const response = await fetch('https://panel.gdynskaekipa.pl/wp-json/wp/v2/posts', { next: { revalidate: duration } });
+    const response = await fetch(`${baseUrl}/posts`, revalidation);
     const posts = await response.json();
-    const post = posts.filter(item => item.slug == slug)[0];
+    const post = posts.filter(item => item.slug == slug && item.status == "publish")[0];
     return post;
 }
 
 export async function getMediaById(id) {
-    const response = await fetch(`https://panel.gdynskaekipa.pl/wp-json/wp/v2/media/${id}`, { next: { revalidate: duration } });
+    const response = await fetch(`${baseUrl}/media/${id}`, revalidation);
     const media = await response.json();
     return media;
 }
 
-export async function getPostCategoryById(id) {
-    const response = await fetch(`https://panel.gdynskaekipa.pl/wp-json/wp/v2/categories/${id}`, { next: { revalidate: duration } });
+export async function getCategoryById(id) {
+    const response = await fetch(`${baseUrl}/categories/${id}`, revalidation);
     const category = await response.json();
     return category;
 }
