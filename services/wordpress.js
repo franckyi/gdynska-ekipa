@@ -18,7 +18,7 @@ export const getData = async (url, slug, filtered = true, ordered = false) => {
 }
 
 export async function getPosts() {
-    const response = await fetch('/posts', revalidation);
+    const response = await fetch(`${baseUrl}/posts`, revalidation);
     const posts = await response.json();
     const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
     return sortedPosts;
@@ -47,4 +47,10 @@ export async function getTagById(id) {
     const response = await fetch(`${baseUrl}/tags/${id}`, revalidation);
     const tag = await response.json();
     return tag;
+}
+
+export async function getAuthorById(id) {
+    const response = await fetch(`${baseUrl}/users/${id}`, revalidation);
+    const user = await response.json();
+    return user;
 }
