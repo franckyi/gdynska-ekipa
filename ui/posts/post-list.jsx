@@ -9,10 +9,11 @@ export default function PostList({posts, limit, heading, introText}) {
     }
 
     return(
-        <section id='blog' className='my-32'>
-            <p className={`w-1/3 mx-auto text-center ${fontSecondary.className} text-lg`}>{introText}</p>
+        <section id='blog' className='my-32 p-4'>
+            <p className={`lg:w-1/3 mx-auto text-center ${fontSecondary.className} text-lg`}>{introText}</p>
             <h2 className="mx-auto mt-8 mb-20 text-4xl lg:text-6xl text-center uppercase">{heading}</h2>
-            <div className=" w-4/6 max-w-screen-2xl mx-auto">
+            <div className="lg:w-4/6 max-w-screen-2xl mx-auto">
+            
                 <div className="lg:flex lg:flex-wrap">
                     {posts.map( post => (
                         <Link
