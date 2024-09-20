@@ -39,8 +39,14 @@ const menuItems = [
   },
   {
     id: 5,
-    name: "Blog",
+    name: "Ostatnie artykuły",
     link: "/#blog",
+    classes: linkClasses
+  },
+  {
+    id: 6,
+    name: "Blog",
+    link: "/blog",
     classes: linkClasses
   },
 ]
