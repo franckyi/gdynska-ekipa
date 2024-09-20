@@ -25,7 +25,7 @@ export default async function Page({ params }) {
             <header className="md:p-8">
                 <AppBar info={office} />
             </header>
-            <main className='my-32 w-4/6 p-8 lg:pt-0 lg:px-20 max-w-screen-2xl lg:flex gap-4 lg:gap-16 mx-auto text-lg bg-stone-200 text-stone-900'>
+            <main className='my-32 lg:w-4/6 p-4 lg:p-8 lg:pt-0 lg:px-20 max-w-screen-2xl lg:flex gap-4 lg:gap-16 mx-auto text-base lg:text-lg bg-stone-200 text-stone-900'>
 
                 <div className='lg:px-4 pb-4 flex flex-col items-end gap-1'>
                     <div className="px-8 py-16 bg-stone-900 text-white text-right">
