@@ -1,3 +1,4 @@
+import '@/public/css/wp-styles.min.css';
 import "./globals.css";
 import { fontPrimary } from "@/ui/fonts";
 

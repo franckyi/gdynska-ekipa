@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default async function PostThumbnail({ mediaId }) {
     const media = await getMediaById(mediaId)
-    const url = media.media_details.sizes.large.source_url;
-    const alt = media.title.rendered;
+    const url = media.media_details?.sizes?.large.source_url;
+    const alt = media.title?.rendered;
 
     return (
         <Image

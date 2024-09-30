@@ -1,4 +1,4 @@
-const duration = 3600 * 6
+const duration = 900 // 15 minutes
 const revalidation = { next: { revalidate: duration } }
 const baseUrl = "https://panel.gdynskaekipa.pl/wp-json/wp/v2"
 
